@@ -1,26 +1,201 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+  
+  --color-parchment: #FAF7F2;
+  --color-parchment-deep: #F3EFE6;
+  --color-parchment-aged: #E9E0CE;
+  --color-parchment-border: #DCCEBA;
+
+  --color-indigo-midnight: #060B18;
+  --color-indigo-deep: #0D1730;
+  --color-indigo-royal: #14224A;
+  --color-indigo-accent: #233975;
+  --color-indigo-light: #3D589E;
+
+  --color-gold-antique: #C5A059;
+  --color-gold-bright: #DEB868;
+  --color-gold-muted: #8E7036;
+  --color-gold-tint: #F8F3E6;
+
+  --color-terracotta: #A6472D;
+  --color-terracotta-soft: #C26349;
+  
+  --color-ink-charcoal: #191B24;
+  --color-ink-muted: #585C6D;
+  --color-ink-faint: #8E93A6;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-parchment: #FAF7F2;
+  --bg-parchment-deep: #F3EFE6;
+  --bg-parchment-aged: #E9E0CE;
+  --border-craft: #E0D4C0;
+  
+  --ink-midnight: #060B18;
+  --ink-deep: #0D1730;
+  --ink-royal: #14224A;
+  
+  --gold-antique: #C5A059;
+  --gold-foil: #D8B878;
+  --terracotta: #A6472D;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CEB8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base Body Texture */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAF7F2;
+  color: #14224A;
+  position: relative;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Subtle Wasli Paper Grain Texture Overlay */
+.paper-grain {
+  background-image: radial-gradient(rgba(20, 34, 74, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.wasli-texture {
+  background-color: #FAF7F2;
+  background-image: 
+    radial-gradient(at 15% 20%, rgba(197, 160, 89, 0.04) 0px, transparent 50%),
+    radial-gradient(at 85% 80%, rgba(20, 34, 74, 0.03) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(166, 71, 45, 0.02) 0px, transparent 60%);
+}
+
+/* Dark Indigo Heritage Texture */
+.indigo-heritage {
+  background-color: #080E21;
+  background-image: 
+    radial-gradient(at 20% 20%, rgba(35, 57, 117, 0.3) 0px, transparent 60%),
+    radial-gradient(at 80% 80%, rgba(197, 160, 89, 0.12) 0px, transparent 50%);
+}
+
+/* Architectural Jharokha Arch Framing */
+.jharokha-arch {
+  border-top-left-radius: 140px;
+  border-top-right-radius: 140px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.jharokha-arch-pill {
+  border-radius: 9999px 9999px 12px 12px;
+}
+
+.jharokha-frame {
+  position: relative;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 0 0 4px #FAF7F2, 0 0 0 5px rgba(20, 34, 74, 0.12);
+}
+
+.jharokha-frame-dark {
+  position: relative;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  box-shadow: 0 0 0 4px #080E21, 0 0 0 5px rgba(197, 160, 89, 0.2);
+}
+
+/* Indian Ornamental Rules */
+.craft-border {
+  border-color: rgba(197, 160, 89, 0.28);
+}
+
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.6) 20%, rgba(197, 160, 89, 0.8) 50%, rgba(197, 160, 89, 0.6) 80%, transparent);
+}
+
+.indigo-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(20, 34, 74, 0.25) 20%, rgba(20, 34, 74, 0.35) 50%, rgba(20, 34, 74, 0.25) 80%, transparent);
+}
+
+/* Calligraphic Stamp / Wax Seal Badge */
+.craft-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #C5A059;
+  position: relative;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.craft-seal::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  pointer-events: none;
+}
+
+/* Subtle Interactive Tactile Press State */
+.tactile-button {
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 4px rgba(20, 34, 74, 0.06), 0 1px 2px rgba(20, 34, 74, 0.04);
+}
+.tactile-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(20, 34, 74, 0.12), 0 2px 6px rgba(197, 160, 89, 0.15);
+}
+.tactile-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(20, 34, 74, 0.1);
+}
+
+/* Gold Foil Shimmer Text */
+.gold-foil-text {
+  background: linear-gradient(135deg, #A88439 0%, #E3C37C 40%, #C5A059 70%, #9C772F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Underline Draw Animation */
+.ink-underline {
+  position: relative;
+  display: inline-block;
+}
+.ink-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #C5A059;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ink-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
