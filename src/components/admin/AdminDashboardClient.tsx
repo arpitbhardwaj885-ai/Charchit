@@ -37,7 +37,13 @@ import {
   SiteSettings,
   EnquiryStatus,
 } from "@/lib/types";
-import { LotusOrnament, StudioSeal } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  StudioSeal,
+  RoyalCharchitBrandLogo,
+  RoyalArrowUpRight,
+  RoyalSatyaIcon,
+} from "@/components/ui/Ornaments";
 
 interface AdminDashboardClientProps {
   initialEnquiries: ContactEnquiry[];
@@ -228,13 +234,10 @@ export function AdminDashboardClient({
       {/* Top Header */}
       <header className="bg-[#080E21] text-[#FAF7F2] border-b border-[#C5A059]/30 px-6 py-4 flex items-center justify-between sticky top-0 z-40">
         <div className="flex items-center gap-3">
-          <StudioSeal year="2026" city="BHARAT" className="w-10 h-10" />
-          <div>
-            <h1 className="font-serif text-lg tracking-wide text-[#FAF7F2]">
-              Charchit Studios — Curator Portal
-            </h1>
-            <span className="text-[10px] uppercase tracking-widest text-[#C5A059] block">
-              Official Administrative Ledger
+          <RoyalCharchitBrandLogo variant="light" showTagline={false} />
+          <div className="border-l border-[#C5A059]/40 pl-3">
+            <span className="text-[10px] uppercase tracking-widest text-[#C5A059] block font-mono">
+              CURATOR PORTAL // 2026
             </span>
           </div>
         </div>
@@ -246,7 +249,7 @@ export function AdminDashboardClient({
             className="hidden sm:inline-flex items-center gap-1.5 text-xs text-[#FAF7F2]/75 hover:text-[#C5A059] transition-colors"
           >
             <span>Preview Flagship</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <RoyalArrowUpRight className="w-3.5 h-3.5 text-[#C5A059]" />
           </Link>
 
           <button
@@ -262,7 +265,7 @@ export function AdminDashboardClient({
       {/* Global Notification Toast */}
       {notification && (
         <div className="fixed bottom-6 right-6 z-50 bg-[#14224A] text-[#FAF7F2] border border-[#C5A059] px-4 py-2.5 shadow-xl text-xs flex items-center gap-2 animate-in fade-in slide-in-from-bottom-2">
-          <CheckCircle className="w-4 h-4 text-[#C5A059]" />
+          <RoyalSatyaIcon className="w-4 h-4 text-[#C5A059]" />
           <span>{notification}</span>
         </div>
       )}

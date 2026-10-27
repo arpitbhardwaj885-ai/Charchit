@@ -1,8 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Mail, MapPin, Sparkles } from "lucide-react";
-import { LotusOrnament, StudioSeal } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  StudioSeal,
+  RoyalKalamIcon,
+  RoyalChhatriIcon,
+  RoyalTaraIcon,
+  RoyalArrowUpRight,
+  RoyalCharchitBrandLogo,
+} from "@/components/ui/Ornaments";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,16 +32,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16">
           {/* Studio Brand Column */}
           <div className="md:col-span-5 space-y-6">
-            <Link href="/" className="inline-block">
-              <div className="relative w-48 h-14">
-                <Image
-                  src="/brand/charchit-wordmark-light.png"
-                  alt="Charchit Studios"
-                  width={240}
-                  height={80}
-                  className="object-contain object-left max-h-12 w-auto"
-                />
-              </div>
+            <Link href="/" className="inline-block" aria-label="Charchit Studios Home">
+              <RoyalCharchitBrandLogo variant="light" showTagline={true} />
             </Link>
 
             <p className="font-serif italic text-2xl text-[#E9E0CE] max-w-md leading-relaxed">
@@ -51,7 +50,7 @@ export function Footer() {
               <StudioSeal year="2026" city="BHARAT" className="w-20 h-20" />
               <div className="space-y-1">
                 <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.2em] text-[#C5A059] font-medium">
-                  <Sparkles className="w-3 h-3" />
+                  <RoyalTaraIcon className="w-3.5 h-3.5 text-[#C5A059]" />
                   HANDCRAFTED IN BHARAT
                 </span>
                 <p className="text-xs text-[#FAF7F2]/60">
@@ -133,27 +132,27 @@ export function Footer() {
 
             <div className="space-y-3 text-xs text-[#FAF7F2]/80">
               <div className="flex items-start gap-2.5">
-                <Mail className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+                <RoyalKalamIcon className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
                 <div>
                   <span className="block text-[10px] text-[#FAF7F2]/50 uppercase tracking-widest">
                     Direct Studio Desk
                   </span>
                   <a
-                    href="mailto:namaste@charchitstudios.com"
+                    href="mailto:arpitbhardwaj885@gmail.com"
                     className="hover:text-[#C5A059] transition-colors"
                   >
-                    namaste@charchitstudios.com
+                    arpitbhardwaj885@gmail.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
+                <RoyalChhatriIcon className="w-4 h-4 text-[#C5A059] shrink-0 mt-0.5" />
                 <div>
                   <span className="block text-[10px] text-[#FAF7F2]/50 uppercase tracking-widest">
-                    Studio Locations
+                    Studio Presence
                   </span>
-                  <span>New Delhi & Mumbai, Bharat</span>
+                  <span>Online Web // Serving Clients Worldwide</span>
                 </div>
               </div>
             </div>
@@ -164,13 +163,13 @@ export function Footer() {
               </span>
               <div className="flex items-center gap-4 text-xs">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/charchit.studios?rpxt=MW5rNDh0Z3R1ZTZnMg=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#FAF7F2]/70 hover:text-[#C5A059] transition-colors flex items-center gap-1"
                 >
                   <span>Instagram</span>
-                  <ArrowUpRight className="w-3 h-3" />
+                  <RoyalArrowUpRight className="w-3 h-3 text-[#C5A059]" />
                 </a>
                 <a
                   href="https://linkedin.com"
@@ -179,7 +178,7 @@ export function Footer() {
                   className="text-[#FAF7F2]/70 hover:text-[#C5A059] transition-colors flex items-center gap-1"
                 >
                   <span>LinkedIn</span>
-                  <ArrowUpRight className="w-3 h-3" />
+                  <RoyalArrowUpRight className="w-3 h-3 text-[#C5A059]" />
                 </a>
                 <a
                   href="https://x.com"
@@ -188,7 +187,7 @@ export function Footer() {
                   className="text-[#FAF7F2]/70 hover:text-[#C5A059] transition-colors flex items-center gap-1"
                 >
                   <span>Twitter / X</span>
-                  <ArrowUpRight className="w-3 h-3" />
+                  <RoyalArrowUpRight className="w-3 h-3 text-[#C5A059]" />
                 </a>
               </div>
             </div>

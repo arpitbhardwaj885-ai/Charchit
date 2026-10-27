@@ -2,11 +2,16 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Clock, Share2, Sparkles } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
-import { LotusOrnament, GoldDividerWithLotus, StudioSeal } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  GoldDividerWithLotus,
+  StudioSeal,
+  RoyalArrowLeft,
+  RoyalKalaChakraIcon,
+} from "@/components/ui/Ornaments";
 import { db } from "@/lib/store";
 
 export async function generateStaticParams() {
@@ -54,7 +59,7 @@ export default async function JournalArticlePage({
               href="/journal"
               className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#8E7036] hover:text-[#14224A] transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <RoyalArrowLeft className="w-4 h-4 text-[#C5A059]" />
               <span>Back to The Journal</span>
             </Link>
 
@@ -63,7 +68,7 @@ export default async function JournalArticlePage({
                 {article.category_name}
               </span>
               <span className="flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5" />
+                <RoyalKalaChakraIcon className="w-3.5 h-3.5 text-[#C5A059]" />
                 {article.reading_time_minutes} min read
               </span>
               <span>•</span>

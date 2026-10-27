@@ -3,9 +3,14 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Sparkles, FolderArchive, Layers, Plus } from "lucide-react";
 import { Project } from "@/lib/types";
-import { LotusOrnament, GoldDividerWithLotus, StudioSeal } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  GoldDividerWithLotus,
+  StudioSeal,
+  RoyalTaraIcon,
+  RoyalArrowUpRight,
+} from "@/components/ui/Ornaments";
 
 interface WorkGalleryProps {
   projects: Project[];
@@ -32,7 +37,7 @@ export function WorkGallery({ projects, showHeading = true }: WorkGalleryProps) 
       {showHeading && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
           <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold mb-2">
-            <Sparkles className="w-3.5 h-3.5" />
+            <RoyalTaraIcon className="w-3.5 h-3.5 text-[#C5A059]" />
             <span>ARCHIVAL REPERTORY</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl text-[#14224A]">
@@ -128,7 +133,7 @@ export function WorkGallery({ projects, showHeading = true }: WorkGalleryProps) 
                     />
                   ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center text-[#8E7036] bg-[#F4EFE6]">
-                      <FolderArchive className="w-10 h-10 mb-2 opacity-50" />
+                      <LotusOrnament className="w-8 h-8 mb-2 text-[#C5A059]" />
                       <span className="text-[11px] uppercase tracking-widest font-mono">
                         Plate // {project.category_name}
                       </span>
@@ -139,8 +144,8 @@ export function WorkGallery({ projects, showHeading = true }: WorkGalleryProps) 
                     {project.category_name}
                   </div>
 
-                  <div className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-[#14224A] text-[#FAF7F2] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
-                    <ArrowUpRight className="w-4 h-4" />
+                  <div className="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-[#14224A] text-[#DEB868] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                    <RoyalArrowUpRight className="w-4 h-4 text-[#DEB868]" />
                   </div>
                 </div>
 

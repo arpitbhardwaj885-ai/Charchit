@@ -1,10 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import { Scale, AlertTriangle } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
-import { LotusOrnament, GoldDividerWithLotus } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  GoldDividerWithLotus,
+  RoyalShankhaIcon,
+  RoyalNyayaIcon,
+} from "@/components/ui/Ornaments";
 
 export const metadata = {
   title: "Terms of Engagement — Charchit Studios",
@@ -35,7 +39,7 @@ export default function TermsPage() {
 
           {/* Legal Notice Banner */}
           <div className="p-4 bg-amber-50 border border-amber-300 text-amber-900 text-xs flex items-start gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
+            <RoyalShankhaIcon className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
             <div>
               <span className="font-semibold block uppercase tracking-wider text-[11px]">
                 Owner Review Notice

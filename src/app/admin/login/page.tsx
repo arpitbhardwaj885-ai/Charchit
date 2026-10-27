@@ -2,9 +2,14 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { KeyRound, Lock, ArrowRight, AlertCircle, Shield } from "lucide-react";
 import { adminLogin } from "@/actions/admin";
-import { LotusOrnament, StudioSeal } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  StudioSeal,
+  RoyalLockIcon,
+  RoyalShankhaIcon,
+  RoyalArrowRight,
+} from "@/components/ui/Ornaments";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -63,13 +68,13 @@ export default function AdminLoginPage() {
                 placeholder="Enter studio passkey..."
                 className="w-full pl-10 pr-4 py-2.5 bg-[#FAF7F2] border border-[#DCCEBA] focus:border-[#C5A059] focus:outline-none text-sm text-[#14224A]"
               />
-              <KeyRound className="w-4 h-4 text-[#8E7036] absolute left-3 top-3" />
+              <RoyalLockIcon className="w-4 h-4 text-[#8E7036] absolute left-3 top-3" />
             </div>
           </div>
 
           {error && (
             <div className="p-3 bg-red-50 border border-red-200 text-red-900 text-xs flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 text-red-700 shrink-0" />
+              <RoyalShankhaIcon className="w-4 h-4 text-red-700 shrink-0" />
               <span>{error}</span>
             </div>
           )}
@@ -78,14 +83,14 @@ export default function AdminLoginPage() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex items-center justify-center gap-2 py-3 bg-[#14224A] text-[#FAF7F2] text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#C5A059] hover:text-[#060B18] disabled:opacity-50 transition-colors shadow-sm"
+              className="w-full flex items-center justify-center gap-2 py-3 bg-[#14224A] text-[#FAF7F2] text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#C5A059] hover:text-[#060B18] disabled:opacity-50 transition-colors shadow-sm tactile-button"
             >
               {isLoading ? (
                 <span>Verifying Passkey...</span>
               ) : (
                 <>
                   <span>Authenticate Session</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <RoyalArrowRight className="w-4 h-4 text-[#DEB868]" />
                 </>
               )}
             </button>

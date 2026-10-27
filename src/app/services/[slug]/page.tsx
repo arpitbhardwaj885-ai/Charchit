@@ -1,11 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, Check, HelpCircle, Sparkles } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
-import { LotusOrnament, GoldDividerWithLotus, StudioSeal } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  GoldDividerWithLotus,
+  StudioSeal,
+  RoyalArrowLeft,
+} from "@/components/ui/Ornaments";
 import { db } from "@/lib/store";
 
 export async function generateStaticParams() {
@@ -57,7 +61,7 @@ export default async function ServiceDetailPage({
               href="/services"
               className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#8E7036] hover:text-[#14224A] transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <RoyalArrowLeft className="w-4 h-4 text-[#C5A059]" />
               <span>All Disciplines</span>
             </Link>
 

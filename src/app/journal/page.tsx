@@ -1,11 +1,18 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, BookOpen, Clock, Sparkles } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
-import { LotusOrnament, GoldDividerWithLotus, StudioSeal } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  GoldDividerWithLotus,
+  StudioSeal,
+  RoyalGranthaIcon,
+  RoyalDiyaIcon,
+  RoyalKalaChakraIcon,
+  RoyalArrowUpRight,
+} from "@/components/ui/Ornaments";
 import { db } from "@/lib/store";
 
 export const metadata = {
@@ -22,14 +29,14 @@ export default async function JournalPage() {
       <CustomCursor />
       <Navbar />
 
-      <main className="min-h-screen bg-[#FAF7F2] text-[#14224A] relative overflow-hidden wasli-texture">
+      <main className="min-h-screen bg-[#FAF7F2] text-[#14224A] relative overflow-hidden wasli-texture pb-20 md:pb-0">
         {/* Editorial Header */}
         <section className="pt-32 pb-16 sm:pt-40 sm:pb-24 px-4 sm:px-6 lg:px-8 border-b border-[#C5A059]/25 text-center">
           <div className="max-w-4xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-[#C5A059] font-semibold">
-              <LotusOrnament className="w-3.5 h-3.5" />
+              <RoyalGranthaIcon className="w-4 h-4 text-[#C5A059]" />
               <span>THE STUDIO JOURNAL</span>
-              <LotusOrnament className="w-3.5 h-3.5" />
+              <RoyalGranthaIcon className="w-4 h-4 text-[#C5A059]" />
             </div>
 
             <h1 className="font-serif text-4xl sm:text-6xl text-[#14224A] font-normal leading-tight">
@@ -84,7 +91,7 @@ export default async function JournalPage() {
                       <div className="p-6 sm:p-8 space-y-3">
                         <div className="flex items-center gap-3 text-xs text-[#8E7036] font-mono">
                           <span className="flex items-center gap-1">
-                            <Clock className="w-3.5 h-3.5" />
+                            <RoyalKalaChakraIcon className="w-3.5 h-3.5 text-[#C5A059]" />
                             {article.reading_time_minutes} min read
                           </span>
                           <span>•</span>
@@ -109,7 +116,7 @@ export default async function JournalPage() {
 
                     <div className="px-6 pb-6 pt-2 border-t border-[#E0D4C0]/50 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[#14224A] group-hover:text-[#C5A059]">
                       <span>Read Essay</span>
-                      <ArrowUpRight className="w-4 h-4" />
+                      <RoyalArrowUpRight className="w-4 h-4 text-[#C5A059]" />
                     </div>
                   </Link>
                 ))}

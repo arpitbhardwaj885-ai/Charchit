@@ -1,17 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Sparkles,
-  Compass,
-  Layers,
-  Palette,
-  Terminal,
-  TrendingUp,
-  Cpu,
-  ChevronRight,
-} from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
@@ -22,6 +11,14 @@ import {
   LotusOrnament,
   GoldDividerWithLotus,
   StudioSeal,
+  RoyalKalamIcon,
+  RoyalJharokhaIcon,
+  RoyalDiyaIcon,
+  RoyalSuryaIcon,
+  RoyalArrowUpRight,
+  RoyalTaraIcon,
+  RoyalChevronRight,
+  RoyalCharchitBrandLogo,
 } from "@/components/ui/Ornaments";
 import { db } from "@/lib/store";
 
@@ -45,7 +42,7 @@ export default async function HomePage() {
       <CustomCursor />
       <Navbar />
 
-      <main className="min-h-screen bg-[#FAF7F2] text-[#14224A] relative overflow-hidden wasli-texture">
+      <main className="min-h-screen bg-[#FAF7F2] text-[#14224A] relative overflow-hidden wasli-texture pb-20 md:pb-0">
         {/* ========================================================= */}
         {/* 1. HERO SECTION: EDITORIAL ART-DIRECTED CROWN */}
         {/* ========================================================= */}
@@ -89,7 +86,7 @@ export default async function HomePage() {
 
             {/* Primary Headline & Philosophical Tagline */}
             <div className="space-y-4 max-w-4xl mx-auto">
-              <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] text-[#14224A] tracking-tight">
+              <h1 className="font-serif text-3xl sm:text-6xl lg:text-7xl font-normal leading-[1.12] sm:leading-[1.08] text-[#14224A] tracking-tight">
                 “Make your business{" "}
                 <span className="italic font-normal underline decoration-[#C5A059]/50 underline-offset-8">
                   worth talking about
@@ -97,7 +94,7 @@ export default async function HomePage() {
                 .”
               </h1>
 
-              <p className="text-sm sm:text-base md:text-lg text-[#585C6D] max-w-2xl mx-auto font-sans leading-relaxed pt-2">
+              <p className="text-xs sm:text-base md:text-lg text-[#585C6D] max-w-2xl mx-auto font-sans leading-relaxed pt-2">
                 We combine classical Indian craftsmanship, editorial typography,
                 and high-performance digital engineering to build flagship websites
                 and brand systems that command cultural prestige.
@@ -105,23 +102,54 @@ export default async function HomePage() {
             </div>
 
             {/* Tactile CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 sm:pt-4">
               <Link
                 href="/contact"
                 className="w-full sm:w-auto px-8 py-3.5 bg-[#14224A] text-[#FAF7F2] text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 hover:bg-[#C5A059] hover:text-[#060B18] shadow-md tactile-button flex items-center justify-center gap-2"
               >
                 <span>Commission Studio Brief</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <RoyalArrowUpRight className="w-4 h-4 text-[#DEB868]" />
               </Link>
               <Link
                 href="/services"
                 className="w-full sm:w-auto px-8 py-3.5 border border-[#14224A]/40 text-[#14224A] text-xs uppercase tracking-[0.2em] font-medium transition-colors hover:border-[#14224A] hover:bg-[#E9E0CE]/40 flex items-center justify-center gap-2"
               >
                 <span>Explore Disciplines</span>
+                <RoyalArrowUpRight className="w-3.5 h-3.5 text-[#C5A059]" />
               </Link>
             </div>
 
-            <div className="pt-6">
+            {/* Mobile Cultural Pillars: 3-Pillar Authentic Indian Heritage Ribbon */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 sm:pt-6 max-w-4xl mx-auto text-left">
+              <div className="p-3.5 sm:p-4 bg-[#FAF7F2] border border-[#C5A059]/40 shadow-xs relative overflow-hidden jharokha-corners wasli-texture">
+                <div className="flex items-center justify-between text-[#8E7036] text-[9px] font-mono mb-1">
+                  <span>DISCIPLINE 01</span>
+                  <LotusOrnament className="w-3 h-3 text-[#C5A059]" />
+                </div>
+                <div className="font-serif text-sm sm:text-base text-[#14224A] font-semibold">शास्त्रीय शिल्प // Craft</div>
+                <div className="text-[10px] sm:text-[11px] text-[#585C6D] mt-0.5 leading-snug">Wasli paper, Kalamkari block motifs & gold leaf foil.</div>
+              </div>
+
+              <div className="p-3.5 sm:p-4 bg-[#FAF7F2] border border-[#C5A059]/40 shadow-xs relative overflow-hidden jharokha-corners wasli-texture">
+                <div className="flex items-center justify-between text-[#8E7036] text-[9px] font-mono mb-1">
+                  <span>DISCIPLINE 02</span>
+                  <LotusOrnament className="w-3 h-3 text-[#C5A059]" />
+                </div>
+                <div className="font-serif text-sm sm:text-base text-[#14224A] font-semibold">संपादकीय भव्यता // Editorial</div>
+                <div className="text-[10px] sm:text-[11px] text-[#585C6D] mt-0.5 leading-snug">Jharokha arch framing & classical Cormorant typography.</div>
+              </div>
+
+              <div className="p-3.5 sm:p-4 bg-[#FAF7F2] border border-[#C5A059]/40 shadow-xs relative overflow-hidden jharokha-corners wasli-texture">
+                <div className="flex items-center justify-between text-[#8E7036] text-[9px] font-mono mb-1">
+                  <span>DISCIPLINE 03</span>
+                  <LotusOrnament className="w-3 h-3 text-[#C5A059]" />
+                </div>
+                <div className="font-serif text-sm sm:text-base text-[#14224A] font-semibold">आधुनिक निर्माण // Code</div>
+                <div className="text-[10px] sm:text-[11px] text-[#585C6D] mt-0.5 leading-snug">High-performance Next.js App Router, Supabase & fluid motion.</div>
+              </div>
+            </div>
+
+            <div className="pt-4 sm:pt-6">
               <GoldDividerWithLotus />
             </div>
           </div>
@@ -172,7 +200,7 @@ export default async function HomePage() {
             <div className="lg:col-span-7 space-y-8">
               <div className="space-y-2">
                 <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold">
-                  <Sparkles className="w-3.5 h-3.5" />
+                  <RoyalTaraIcon className="w-3.5 h-3.5 text-[#C5A059]" />
                   <span>CRAFT PHILOSOPHY</span>
                 </div>
                 <h2 className="font-serif text-3xl sm:text-5xl text-[#14224A] leading-tight">
@@ -181,9 +209,9 @@ export default async function HomePage() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                <div className="p-5 bg-[#FAF7F2] border border-[#DCCEBA] space-y-2">
-                  <div className="flex items-center gap-2 text-[#C5A059]">
-                    <LotusOrnament className="w-4 h-4" />
+                <div className="p-5 bg-[#FAF7F2] border border-[#DCCEBA] space-y-2 jharokha-corners wasli-texture">
+                  <div className="flex items-center gap-2.5 text-[#C5A059]">
+                    <RoyalKalamIcon className="w-5 h-5" />
                     <h4 className="font-serif text-lg font-semibold text-[#14224A]">
                       Handcrafted, Never Generic
                     </h4>
@@ -194,9 +222,9 @@ export default async function HomePage() {
                   </p>
                 </div>
 
-                <div className="p-5 bg-[#FAF7F2] border border-[#DCCEBA] space-y-2">
-                  <div className="flex items-center gap-2 text-[#C5A059]">
-                    <LotusOrnament className="w-4 h-4" />
+                <div className="p-5 bg-[#FAF7F2] border border-[#DCCEBA] space-y-2 jharokha-corners wasli-texture">
+                  <div className="flex items-center gap-2.5 text-[#C5A059]">
+                    <RoyalJharokhaIcon className="w-5 h-5" />
                     <h4 className="font-serif text-lg font-semibold text-[#14224A]">
                       Rooted In Heritage
                     </h4>
@@ -207,9 +235,9 @@ export default async function HomePage() {
                   </p>
                 </div>
 
-                <div className="p-5 bg-[#FAF7F2] border border-[#DCCEBA] space-y-2">
-                  <div className="flex items-center gap-2 text-[#C5A059]">
-                    <LotusOrnament className="w-4 h-4" />
+                <div className="p-5 bg-[#FAF7F2] border border-[#DCCEBA] space-y-2 jharokha-corners wasli-texture">
+                  <div className="flex items-center gap-2.5 text-[#C5A059]">
+                    <RoyalDiyaIcon className="w-5 h-5" />
                     <h4 className="font-serif text-lg font-semibold text-[#14224A]">
                       Conversation as Currency
                     </h4>
@@ -220,9 +248,9 @@ export default async function HomePage() {
                   </p>
                 </div>
 
-                <div className="p-5 bg-[#FAF7F2] border border-[#DCCEBA] space-y-2">
-                  <div className="flex items-center gap-2 text-[#C5A059]">
-                    <LotusOrnament className="w-4 h-4" />
+                <div className="p-5 bg-[#FAF7F2] border border-[#DCCEBA] space-y-2 jharokha-corners wasli-texture">
+                  <div className="flex items-center gap-2.5 text-[#C5A059]">
+                    <RoyalSuryaIcon className="w-5 h-5" />
                     <h4 className="font-serif text-lg font-semibold text-[#14224A]">
                       High-Yield Engineering
                     </h4>
@@ -244,7 +272,7 @@ export default async function HomePage() {
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.25em] text-[#C5A059] font-semibold">
-                <Sparkles className="w-3.5 h-3.5" />
+                <RoyalTaraIcon className="w-3.5 h-3.5 text-[#C5A059]" />
                 <span>STUDIO DISCIPLINES</span>
               </div>
               <h2 className="font-serif text-3xl sm:text-5xl text-[#14224A]">
@@ -284,7 +312,7 @@ export default async function HomePage() {
                       className="text-xs uppercase tracking-widest text-[#14224A] font-semibold hover:text-[#C5A059] transition-colors inline-flex items-center gap-1.5"
                     >
                       <span>Examine Approach</span>
-                      <ChevronRight className="w-3.5 h-3.5" />
+                      <RoyalChevronRight className="w-3.5 h-3.5 text-[#C5A059]" />
                     </Link>
                   </div>
                 </div>
@@ -294,10 +322,10 @@ export default async function HomePage() {
             <div className="text-center pt-4">
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[#14224A] text-[#14224A] text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#14224A] hover:text-[#FAF7F2] transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 border border-[#14224A] text-[#14224A] text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#14224A] hover:text-[#FAF7F2] transition-colors shadow-xs tactile-button"
               >
                 <span>View Full Disciplines Portfolio</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <RoyalArrowUpRight className="w-4 h-4 text-[#C5A059]" />
               </Link>
             </div>
           </div>
@@ -334,7 +362,7 @@ export default async function HomePage() {
 
           <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
             <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-[#C5A059] font-medium">
-              <Sparkles className="w-3.5 h-3.5" />
+              <RoyalTaraIcon className="w-3.5 h-3.5 text-[#C5A059]" />
               <span>THE INVITATION</span>
             </div>
 

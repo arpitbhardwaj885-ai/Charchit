@@ -1,12 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles, ArrowUpRight, Compass, Shield, Feather, BookOpen } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { CraftProcess } from "@/components/features/CraftProcess";
-import { LotusOrnament, GoldDividerWithLotus, StudioSeal } from "@/components/ui/Ornaments";
+import { StudioScrollEffects } from "@/components/studio/StudioScrollEffects";
+import {
+  LotusOrnament,
+  GoldDividerWithLotus,
+  StudioSeal,
+  RoyalKalamIcon,
+  RoyalDiyaIcon,
+  RoyalMudrikaIcon,
+  RoyalChhatriIcon,
+} from "@/components/ui/Ornaments";
 import { db } from "@/lib/store";
 
 export const metadata = {
@@ -21,9 +29,10 @@ export default async function StudioPage() {
   return (
     <>
       <CustomCursor />
+      <StudioScrollEffects />
       <Navbar />
 
-      <main className="min-h-screen bg-[#FAF7F2] text-[#14224A] relative overflow-hidden wasli-texture">
+      <main className="min-h-screen bg-[#FAF7F2] text-[#14224A] relative overflow-hidden wasli-texture pb-20 md:pb-0">
         {/* Editorial Header */}
         <section className="pt-32 pb-16 sm:pt-40 sm:pb-24 px-4 sm:px-6 lg:px-8 border-b border-[#C5A059]/25 text-center">
           <div className="max-w-4xl mx-auto space-y-6">
@@ -48,26 +57,31 @@ export default async function StudioPage() {
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-5 space-y-6">
               <div className="p-8 bg-[#F4EFE6] border border-[#C5A059]/40 jharokha-arch text-center space-y-4">
-                <StudioSeal year="2026" city="BHARAT" className="w-24 h-24 mx-auto" />
+                <div className="relative w-44 h-16 mx-auto">
+                  <Image
+                    src="/brand/charchit-wordmark.png"
+                    alt="Charchit Studios"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <h3 className="font-serif text-2xl text-[#14224A]">
                   The Meaning of Charchit
                 </h3>
                 <p className="text-xs text-[#585C6D] leading-relaxed font-sans text-left">
-                  In Sanskrit and Hindi, <span className="font-semibold text-[#14224A]">चर्चित (Charchit)</span> means that which is spoken of, widely discussed, and known for its distinction.
+                  In Sanskrit and Hindi, <span className="font-semibold text-[#14224A]">चर्चित (Charchit)</span> means that which is spoken of, widely discussed, and celebrated for its distinction.
                 </p>
                 <div className="pt-2 text-[10px] uppercase tracking-widest text-[#8E7036] border-t border-[#DCCEBA]">
-                  Established in Bharat // 2026
+                  Online Web Studio // Estd. 2026
                 </div>
               </div>
 
               <div className="p-6 bg-[#080E21] text-[#FAF7F2] border border-[#C5A059]/30 space-y-3">
                 <span className="text-[10px] uppercase tracking-[0.22em] text-[#C5A059] font-medium block">
-                  TRANSPARENCY DECLARATION
+                  DIGITAL & ONLINE STUDIO MODEL
                 </span>
                 <p className="text-xs text-[#FAF7F2]/75 leading-relaxed">
-                  In accordance with our studio philosophy, we never invent fake client logos,
-                  fabricated biographies, or synthetic performance claims. Our pride lies in our
-                  tangible engineering and aesthetic standards.
+                  Charchit Studios operates entirely online across the modern web. We do not maintain physical corporate offices—we collaborate directly with visionary founders worldwide to design and engineer bespoke web flagships.
                 </p>
               </div>
             </div>
@@ -118,8 +132,11 @@ export default async function StudioPage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="p-8 bg-[#FAF7F2] border border-[#DCCEBA] space-y-3">
-                <span className="text-xs font-mono text-[#8E7036]">Canon 01</span>
+              <div className="p-8 bg-[#FAF7F2] border border-[#DCCEBA] space-y-3 jharokha-corners wasli-texture">
+                <div className="flex items-center justify-between text-[#8E7036]">
+                  <span className="text-xs font-mono font-medium">Canon 01 // साधना</span>
+                  <RoyalKalamIcon className="w-5 h-5 text-[#C5A059]" />
+                </div>
                 <h3 className="font-serif text-2xl text-[#14224A]">
                   Handcrafted Devotion Over Assembly Lines
                 </h3>
@@ -129,8 +146,11 @@ export default async function StudioPage() {
                 </p>
               </div>
 
-              <div className="p-8 bg-[#FAF7F2] border border-[#DCCEBA] space-y-3">
-                <span className="text-xs font-mono text-[#8E7036]">Canon 02</span>
+              <div className="p-8 bg-[#FAF7F2] border border-[#DCCEBA] space-y-3 jharokha-corners wasli-texture">
+                <div className="flex items-center justify-between text-[#8E7036]">
+                  <span className="text-xs font-mono font-medium">Canon 02 // स्पर्श</span>
+                  <RoyalDiyaIcon className="w-5 h-5 text-[#C5A059]" />
+                </div>
                 <h3 className="font-serif text-2xl text-[#14224A]">
                   Tactility in a Virtual Medium
                 </h3>
@@ -140,8 +160,11 @@ export default async function StudioPage() {
                 </p>
               </div>
 
-              <div className="p-8 bg-[#FAF7F2] border border-[#DCCEBA] space-y-3">
-                <span className="text-xs font-mono text-[#8E7036]">Canon 03</span>
+              <div className="p-8 bg-[#FAF7F2] border border-[#DCCEBA] space-y-3 jharokha-corners wasli-texture">
+                <div className="flex items-center justify-between text-[#8E7036]">
+                  <span className="text-xs font-mono font-medium">Canon 03 // सत्य</span>
+                  <RoyalMudrikaIcon className="w-5 h-5 text-[#C5A059]" />
+                </div>
                 <h3 className="font-serif text-2xl text-[#14224A]">
                   Honesty in Architecture & Discourse
                 </h3>
@@ -151,8 +174,11 @@ export default async function StudioPage() {
                 </p>
               </div>
 
-              <div className="p-8 bg-[#FAF7F2] border border-[#DCCEBA] space-y-3">
-                <span className="text-xs font-mono text-[#8E7036]">Canon 04</span>
+              <div className="p-8 bg-[#FAF7F2] border border-[#DCCEBA] space-y-3 jharokha-corners wasli-texture">
+                <div className="flex items-center justify-between text-[#8E7036]">
+                  <span className="text-xs font-mono font-medium">Canon 04 // सामर्थ्य</span>
+                  <RoyalChhatriIcon className="w-5 h-5 text-[#C5A059]" />
+                </div>
                 <h3 className="font-serif text-2xl text-[#14224A]">
                   Performant Endurance
                 </h3>

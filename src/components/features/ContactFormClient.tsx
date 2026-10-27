@@ -1,9 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { submitContactEnquiry } from "@/actions/enquiry";
-import { LotusOrnament } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  RoyalSandeshIcon,
+  RoyalSatyaIcon,
+  RoyalShankhaIcon,
+} from "@/components/ui/Ornaments";
 
 export function ContactFormClient() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,7 +33,7 @@ export function ContactFormClient() {
     } catch {
       setResult({
         success: false,
-        error: "Failed to transmit message. Please email us directly at namaste@charchitstudios.com.",
+        error: "Failed to transmit message. Please email us directly at arpitbhardwaj885@gmail.com.",
       });
     } finally {
       setIsSubmitting(false);
@@ -142,14 +146,14 @@ export function ContactFormClient() {
 
       {result?.success && (
         <div className="p-4 bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs flex items-start gap-2.5">
-          <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+          <RoyalSatyaIcon className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
           <p className="leading-relaxed">{result.message}</p>
         </div>
       )}
 
       {result?.error && (
         <div className="p-4 bg-red-50 border border-red-300 text-red-900 text-xs flex items-start gap-2.5">
-          <AlertCircle className="w-4 h-4 text-red-700 shrink-0 mt-0.5" />
+          <RoyalShankhaIcon className="w-4 h-4 text-red-700 shrink-0 mt-0.5" />
           <p className="leading-relaxed">{result.error}</p>
         </div>
       )}
@@ -158,14 +162,14 @@ export function ContactFormClient() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full sm:w-auto px-8 py-3 bg-[#14224A] text-[#FAF7F2] text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#C5A059] hover:text-[#060B18] disabled:opacity-50 transition-colors flex items-center justify-center gap-2 shadow-sm"
+          className="w-full sm:w-auto px-8 py-3 bg-[#14224A] text-[#FAF7F2] text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#C5A059] hover:text-[#060B18] disabled:opacity-50 transition-colors flex items-center justify-center gap-2 shadow-sm tactile-button"
         >
           {isSubmitting ? (
             <span>Transmitting to Studio Desk...</span>
           ) : (
             <>
               <span>Dispatch Message</span>
-              <Send className="w-3.5 h-3.5" />
+              <RoyalSandeshIcon className="w-3.5 h-3.5 text-[#DEB868]" />
             </>
           )}
         </button>

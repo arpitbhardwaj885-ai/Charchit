@@ -5,7 +5,13 @@ import { CustomCursor } from "@/components/ui/CustomCursor";
 import { ProjectBriefBuilder } from "@/components/features/ProjectBriefBuilder";
 import { DigitalCallingCard } from "@/components/features/DigitalCallingCard";
 import { ContactFormClient } from "@/components/features/ContactFormClient";
-import { LotusOrnament, GoldDividerWithLotus, StudioSeal } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  GoldDividerWithLotus,
+  StudioSeal,
+  RoyalPatraIcon,
+  RoyalArrowUpRight,
+} from "@/components/ui/Ornaments";
 import { db } from "@/lib/store";
 
 export const metadata = {
@@ -76,7 +82,7 @@ export default async function ContactPage() {
             <div className="lg:col-span-5 space-y-6">
               <DigitalCallingCard settings={settings} />
 
-              <div className="p-6 bg-[#FAF7F2] border border-[#C5A059]/30 space-y-3">
+              <div className="p-6 bg-[#FAF7F2] border border-[#C5A059]/30 space-y-4">
                 <h4 className="font-serif text-lg text-[#14224A]">
                   Our Commitment to Dialogue
                 </h4>
@@ -85,6 +91,25 @@ export default async function ContactPage() {
                   All submitted briefs are preserved securely in our database ledger and
                   answered within 24 to 48 business hours.
                 </p>
+
+                <div className="pt-2 border-t border-[#C5A059]/20 flex flex-col sm:flex-row gap-2.5">
+                  <a
+                    href="mailto:arpitbhardwaj885@gmail.com"
+                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 border border-[#C5A059]/40 bg-[#F4EFE6] text-[#14224A] text-xs font-mono hover:border-[#14224A] transition-colors"
+                  >
+                    <RoyalPatraIcon className="w-3.5 h-3.5 text-[#C5A059]" />
+                    <span className="truncate">Email Direct</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/charchit.studios?rpxt=MW5rNDh0Z3R1ZTZnMg=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 py-2 px-3 border border-[#C5A059]/40 bg-[#F4EFE6] text-[#14224A] text-xs font-mono hover:border-[#14224A] transition-colors"
+                  >
+                    <RoyalArrowUpRight className="w-3.5 h-3.5 text-[#C5A059]" />
+                    <span>Instagram</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

@@ -1,10 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Sparkles, ChevronRight } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
-import { LotusOrnament, GoldDividerWithLotus } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  GoldDividerWithLotus,
+  RoyalKalashIcon,
+  RoyalChevronRight,
+} from "@/components/ui/Ornaments";
 import { db } from "@/lib/store";
 
 export const metadata = {
@@ -21,14 +25,14 @@ export default async function ServicesPage() {
       <CustomCursor />
       <Navbar />
 
-      <main className="min-h-screen bg-[#FAF7F2] text-[#14224A] relative overflow-hidden wasli-texture">
+      <main className="min-h-screen bg-[#FAF7F2] text-[#14224A] relative overflow-hidden wasli-texture pb-20 md:pb-0">
         {/* Header */}
         <section className="pt-32 pb-16 sm:pt-40 sm:pb-24 px-4 sm:px-6 lg:px-8 border-b border-[#C5A059]/25 text-center">
           <div className="max-w-4xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-[#C5A059] font-semibold">
-              <LotusOrnament className="w-3.5 h-3.5" />
+              <RoyalKalashIcon className="w-3.5 h-3.5 text-[#C5A059]" />
               <span>THE FIVE DISCIPLINES</span>
-              <LotusOrnament className="w-3.5 h-3.5" />
+              <RoyalKalashIcon className="w-3.5 h-3.5 text-[#C5A059]" />
             </div>
 
             <h1 className="font-serif text-4xl sm:text-6xl text-[#14224A] font-normal leading-tight">
@@ -48,7 +52,7 @@ export default async function ServicesPage() {
             {services.map((service, index) => (
               <div
                 key={service.id}
-                className="p-8 sm:p-12 bg-[#FAF7F2] border border-[#DCCEBA] hover:border-[#C5A059] transition-all duration-300 shadow-sm hover:shadow-xl relative overflow-hidden"
+                className="p-8 sm:p-12 bg-[#FAF7F2] border border-[#DCCEBA] hover:border-[#C5A059] transition-all duration-300 shadow-sm hover:shadow-xl relative overflow-hidden jharokha-corners wasli-texture"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   <div className="lg:col-span-4 space-y-3">
@@ -87,7 +91,7 @@ export default async function ServicesPage() {
                         className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] font-semibold text-[#14224A] hover:text-[#C5A059] transition-colors"
                       >
                         <span>Examine Approach & Deliverables</span>
-                        <ChevronRight className="w-4 h-4" />
+                        <RoyalChevronRight className="w-4 h-4 text-[#C5A059]" />
                       </Link>
 
                       <Link

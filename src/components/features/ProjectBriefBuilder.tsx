@@ -1,22 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import confetti from "canvas-confetti";
-import {
-  Check,
-  ChevronRight,
-  ChevronLeft,
-  Sparkles,
-  Layers,
-  Send,
-  Building,
-  Target,
-  Clock,
-  IndianRupee,
-  ShieldCheck,
-} from "lucide-react";
 import { submitProjectBriefAction } from "@/actions/enquiry";
-import { LotusOrnament, StudioSeal } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  StudioSeal,
+  RoyalSatyaIcon,
+  RoyalChevronRight,
+  RoyalChevronLeft,
+  RoyalSanrakshanIcon,
+  RoyalSandeshIcon,
+  RoyalTaraIcon,
+} from "@/components/ui/Ornaments";
 
 const CRAFT_SERVICES = [
   {
@@ -152,12 +147,6 @@ export function ProjectBriefBuilder() {
       });
 
       if (res.success) {
-        confetti({
-          particleCount: 80,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ["#C5A059", "#14224A", "#A6472D", "#FAF7F2"],
-        });
         setSubmissionResult({
           success: true,
           id: res.id,
@@ -213,7 +202,7 @@ export function ProjectBriefBuilder() {
                     : "bg-[#E9E0CE] text-[#585C6D]"
                 }`}
               >
-                {currentStep > step ? <Check className="w-4 h-4" /> : step}
+                {currentStep > step ? <RoyalSatyaIcon className="w-3.5 h-3.5" /> : step}
               </div>
             ))}
           </div>
@@ -391,7 +380,7 @@ export function ProjectBriefBuilder() {
                                   : "border-[#DCCEBA]"
                               }`}
                             >
-                              {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
+                              {isSelected && <RoyalSatyaIcon className="w-3.5 h-3.5 text-[#060B18]" />}
                             </div>
                           </div>
                           <p
@@ -610,7 +599,7 @@ export function ProjectBriefBuilder() {
                 {/* Brief Summary Box */}
                 <div className="p-4 bg-[#F4EFE6] border border-[#C5A059]/40 space-y-2 text-xs">
                   <div className="flex items-center gap-2 text-[#8E7036] font-semibold uppercase tracking-wider text-[10px]">
-                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <RoyalSanrakshanIcon className="w-3.5 h-3.5 text-[#C5A059]" />
                     <span>Brief Archival Preview</span>
                   </div>
                   <p className="text-[#14224A]">
@@ -639,7 +628,7 @@ export function ProjectBriefBuilder() {
                   onClick={() => setCurrentStep((prev) => prev - 1)}
                   className="inline-flex items-center gap-1.5 px-4 py-2 text-xs uppercase tracking-wider text-[#14224A] border border-[#DCCEBA] hover:border-[#C5A059] transition-colors"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <RoyalChevronLeft className="w-4 h-4 text-[#C5A059]" />
                   <span>Previous</span>
                 </button>
               ) : (
@@ -657,7 +646,7 @@ export function ProjectBriefBuilder() {
                   className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#14224A] text-[#FAF7F2] text-xs uppercase tracking-[0.2em] font-medium hover:bg-[#C5A059] hover:text-[#060B18] disabled:opacity-40 disabled:pointer-events-none transition-colors"
                 >
                   <span>Continue</span>
-                  <ChevronRight className="w-4 h-4" />
+                  <RoyalChevronRight className="w-4 h-4 text-[#C5A059]" />
                 </button>
               ) : (
                 <button
@@ -671,7 +660,7 @@ export function ProjectBriefBuilder() {
                   ) : (
                     <>
                       <span>Submit Commission Brief</span>
-                      <Send className="w-4 h-4" />
+                      <RoyalSandeshIcon className="w-4 h-4 text-[#C5A059]" />
                     </>
                   )}
                 </button>

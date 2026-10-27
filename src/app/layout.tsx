@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { PageTransition } from "@/components/ui/PageTransition";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -36,6 +37,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${jakarta.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-[#FAF7F2] text-[#14224A] selection:bg-[#C5A059]/30 selection:text-[#080D1A]">
+        <PageTransition />
         {children}
       </body>
     </html>

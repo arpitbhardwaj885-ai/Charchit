@@ -2,11 +2,16 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, ExternalLink, Sparkles } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CustomCursor } from "@/components/ui/CustomCursor";
-import { LotusOrnament, GoldDividerWithLotus, StudioSeal } from "@/components/ui/Ornaments";
+import {
+  LotusOrnament,
+  GoldDividerWithLotus,
+  StudioSeal,
+  RoyalArrowLeft,
+  RoyalSutraLinkIcon,
+} from "@/components/ui/Ornaments";
 import { db } from "@/lib/store";
 
 
@@ -50,7 +55,7 @@ export default async function CaseStudyDetailPage({
               href="/work"
               className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#8E7036] hover:text-[#14224A] transition-colors"
             >
-              <ArrowLeft className="w-4 h-4" />
+              <RoyalArrowLeft className="w-4 h-4 text-[#C5A059]" />
               <span>Back to Archival Repertory</span>
             </Link>
 
@@ -76,10 +81,10 @@ export default async function CaseStudyDetailPage({
                   href={project.live_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#14224A] text-[#FAF7F2] text-xs uppercase tracking-widest hover:bg-[#C5A059] hover:text-[#060B18] transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#14224A] text-[#FAF7F2] text-xs uppercase tracking-widest hover:bg-[#C5A059] hover:text-[#060B18] transition-colors shadow-xs"
                 >
                   <span>Visit Live Flagship</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <RoyalSutraLinkIcon className="w-3.5 h-3.5 text-[#DEB868]" />
                 </a>
               </div>
             )}

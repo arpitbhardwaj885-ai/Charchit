@@ -168,10 +168,10 @@ When we frame a case study or an editorial thesis inside an intentional arch or 
     id: "general",
     studio_name: "Charchit Studios",
     tagline: "Make your business worth talking about.",
-    studio_email: "namaste@charchitstudios.com",
+    studio_email: "arpitbhardwaj885@gmail.com",
     studio_phone: "+91 98100 00000",
-    studio_location: "New Delhi & Mumbai, Bharat",
-    instagram_url: "https://instagram.com/charchitstudios",
+    studio_location: "Online Web // Global",
+    instagram_url: "https://www.instagram.com/charchit.studios?rpxt=MW5rNDh0Z3R1ZTZnMg==",
     linkedin_url: "https://linkedin.com/company/charchitstudios",
     twitter_url: "https://x.com/charchitstudios",
     meta_description:
@@ -199,7 +199,7 @@ When we frame a case study or an editorial thesis inside an intentional arch or 
       id: "faq-3",
       question: "How do we commission a project with Charchit Studios?",
       answer:
-        "You can either use our interactive Project Brief Builder on the Contact page to outline your scope and timeline, or email our studio desk directly at namaste@charchitstudios.com.",
+        "You can either use our interactive Project Brief Builder on the Contact page to outline your scope and timeline, or email our studio desk directly at arpitbhardwaj885@gmail.com.",
       display_order: 3,
       is_published: true,
     },

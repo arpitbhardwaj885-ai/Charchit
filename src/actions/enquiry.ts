@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { db } from "@/lib/store";
+import { sendInquiryEmail } from "@/lib/email";
 import { revalidatePath } from "next/cache";
 
 const contactSchema = z.object({
@@ -28,7 +29,7 @@ export async function submitContactEnquiry(formData: FormData) {
 
     const validated = contactSchema.parse(rawData);
 
-    // Persist to database
+    // 1. Persist to server database ledger
     const saved = await db.addEnquiry({
       full_name: validated.fullName,
       email: validated.email,
@@ -41,9 +42,22 @@ export async function submitContactEnquiry(formData: FormData) {
 
     revalidatePath("/admin");
 
+    // 2. Dispatch notification via Resend SDK
+    const emailResult = await sendInquiryEmail({
+      full_name: validated.fullName,
+      email: validated.email,
+      business_name: validated.businessName,
+      service_interest: validated.serviceInterest,
+      budget_range: validated.budgetRange,
+      project_brief: validated.projectBrief,
+      source: "contact_form",
+      submitted_at: saved.created_at,
+    });
+
     return {
       success: true,
       id: saved.id,
+      emailDispatched: emailResult.success,
       message: "Namaste. Your inquiry has been received into our studio ledger. We will review your vision with intention and reply within 24 to 48 hours.",
     };
   } catch (error) {
@@ -55,7 +69,7 @@ export async function submitContactEnquiry(formData: FormData) {
     }
     return {
       success: false,
-      error: "An unexpected error occurred while preserving your inquiry. Please email us directly at namaste@charchitstudios.com.",
+      error: "An unexpected error occurred while preserving your inquiry. Please email us directly at arpitbhardwaj885@gmail.com.",
     };
   }
 }
@@ -86,6 +100,7 @@ export async function submitProjectBriefAction(payload: {
   try {
     const validated = briefSchema.parse(payload);
 
+    // 1. Persist to server database ledger
     const saved = await db.addEnquiry({
       full_name: validated.clientName,
       email: validated.clientEmail,
@@ -103,9 +118,24 @@ export async function submitProjectBriefAction(payload: {
 
     revalidatePath("/admin");
 
+    // 2. Dispatch notification via Resend SDK
+    const emailResult = await sendInquiryEmail({
+      full_name: validated.clientName,
+      email: validated.clientEmail,
+      business_name: validated.businessName,
+      service_interest: validated.selectedServices.join(", "),
+      budget_range: validated.budgetBracket,
+      project_brief: validated.projectBrief,
+      source: "brief_builder",
+      industry: validated.industry,
+      timeline: validated.timelineExpectation,
+      submitted_at: saved.created_at,
+    });
+
     return {
       success: true,
       id: saved.id,
+      emailDispatched: emailResult.success,
       message: "Your project brief has been codified and preserved in the studio archives. We look forward to our creative dialogue.",
     };
   } catch (error) {

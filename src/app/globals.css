@@ -190,6 +190,205 @@ body {
   transform-origin: bottom left;
 }
 
+/* ========================================================= */
+/* NATIVE TRADITIONAL INDIAN HARDWARE CURSOR (EXACTLY ONE CURSOR) */
+/* ========================================================= */
+html,
+body {
+  cursor: url('/brand/cursor-traditional.svg') 2 2, auto !important;
+}
+
+/* Interactive elements: Hover state with radiant golden Lotus & Diya tip */
+a,
+button,
+[role="button"],
+[data-cursor-hover],
+.cursor-pointer,
+input[type="submit"],
+input[type="button"],
+select {
+  cursor: url('/brand/cursor-traditional-hover.svg') 2 2, pointer !important;
+}
+
+/* Text fields: proper text caret */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="search"],
+textarea {
+  cursor: text !important;
+}
+
+@keyframes spin-mandala {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes touch-mandala {
+  0% {
+    transform: translate(-50%, -50%) scale(0.35);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.55);
+    opacity: 0;
+  }
+}
+
+@keyframes stamp-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.25);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.4);
+    opacity: 0;
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes gold-shimmer-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 4px rgba(197, 160, 89, 0.3));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(197, 160, 89, 0.75));
+  }
+}
+
+.animate-spin-mandala {
+  animation: spin-mandala 18s linear infinite;
+}
+
+.animate-touch-mandala {
+  animation: touch-mandala 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-stamp-ripple {
+  animation: stamp-ripple 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-gold-pulse {
+  animation: gold-shimmer-pulse 3s ease-in-out infinite;
+}
+
+/* Ornate Corner Brackets for Royal Indian Framing */
+.jharokha-corners {
+  position: relative;
+}
+.jharokha-corners::before,
+.jharokha-corners::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #C5A059;
+  pointer-events: none;
+  opacity: 0.75;
+}
+.jharokha-corners::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid #C5A059;
+  border-left: 2px solid #C5A059;
+}
+.jharokha-corners::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid #C5A059;
+  border-right: 2px solid #C5A059;
+}
+
+/* Mobile Glassmorphic Bottom Dock */
+.mobile-action-dock {
+  background: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 -4px 24px rgba(20, 34, 74, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+/* Royal Indian Page Transition Curtain */
+@keyframes page-curtain {
+  0% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+}
+
+.animate-page-curtain {
+  animation: page-curtain 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Process Section Click Mandala Shockwave */
+@keyframes process-shockwave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.1) rotate(0deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.6) rotate(60deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.4) rotate(120deg);
+    opacity: 0;
+  }
+}
+
+.animate-process-shockwave {
+  animation: process-shockwave 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Gold Shimmer Sweep across Process Card */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 0.8s ease-out forwards;
+}
+
 /* Respect Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
@@ -199,3 +398,4 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
